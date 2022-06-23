@@ -1,16 +1,15 @@
-# spotify
+# spotify-clone
 
-A spotify clone
+A spotify clone made using Flutter 
 
-## Getting Started
+## Home screen 
 
-This project is a starting point for a Flutter application.
+<img width="380" alt="Screenshot 2022-06-23 at 7 22 47 PM" src="https://user-images.githubusercontent.com/32922277/175316493-e5a90eb9-2b4b-4b27-a78a-cbf61231eb0a.png">
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### features to be added
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* search page 
+* authentication using firebase
+* full screen audio player
+* a backend service to fetch songs from
