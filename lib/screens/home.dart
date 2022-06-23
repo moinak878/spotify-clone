@@ -7,10 +7,18 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Text(
-            'Home',
-            style: TextStyle(color: Colors.white
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors : [
+                Colors.blueGrey.shade300,
+                Colors.black
+              ],
+              begin: Alignment.topLeft,
+              end : Alignment.bottomRight,
+              stops: const [0.1 , 0.3],
             )
+          ),
         )
     );
   }
