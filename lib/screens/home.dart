@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:spotify/services/category_operations.dart';
+import '../models/category.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -33,6 +35,53 @@ class Home extends StatelessWidget {
       ),
     );
   }
+  
+  Widget createGrid(){
+
+    Widget createCategory(Category category){
+      return Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+          color: Colors.grey.withOpacity(0.3),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(5),
+          child: Row(
+            children: [
+              Image.network(category.imageURL , fit : BoxFit.cover),
+              Padding(
+                padding: EdgeInsets.only(left : 10),
+                child: Text(category.name , style: TextStyle(
+                    color : Colors.white ,
+                    fontWeight: FontWeight.bold
+                ),
+                ),
+              )
+            ],
+          ),
+        ),
+      );
+    }
+
+    List<Widget> createListofCategories(){
+      return CategoryOperations.getCategories()
+          .map((category) => createCategory(category))
+          .toList();
+    }
+    
+    return Container(
+      padding: EdgeInsets.all(5),
+      height: 400,
+      child: GridView.count(
+        childAspectRatio : 5/2 ,// width / height
+        crossAxisCount: 2,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+        children : createListofCategories()
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -50,7 +99,12 @@ class Home extends StatelessWidget {
           ),
           child: Column(
             children:[
-              createAppBar()],
+              createAppBar(),
+              SizedBox(
+                height : 30,
+              ),
+              createGrid(),
+            ],
           ),
         )
     );
