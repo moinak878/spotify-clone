@@ -18,16 +18,23 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   var Tabs = [];
+  var isPlaying = false;
   final _audioPlayer = AudioPlayer();
   Music? music;
   int currentTabIndex = 0;
 
-  Widget createMusicPlayer(Music? music) {
+  Widget createMusicPlayer(Music? music , {bool stop = false}) {
     this.music = music;
-    setState(() {});
+
     if (music == null) {
       return SizedBox();
     }
+    if(stop){
+      isPlaying = false;
+      _audioPlayer.stop();
+    }
+    setState(() {});
+
     return Container(
       // color: Colors.transparent,
       height: 50,
@@ -46,9 +53,19 @@ class _MyAppState extends State<MyApp> {
               padding: EdgeInsets.only(right: 10),
               child: IconButton(
                   onPressed: () async{
+                    isPlaying = !isPlaying;
+                    print("isPlaying is : $isPlaying ");
+                    if(isPlaying){
                      await _audioPlayer.play(music.audioURL);
+                    }
+                    else{
+                      _audioPlayer.pause();
+                    }
+                    setState((){});
                   },
-                  icon: Icon(Icons.play_arrow, color: Colors.white,))),
+                  icon:
+                  isPlaying?Icon(Icons.pause, color: Colors.white,)
+                  : Icon(Icons.play_arrow, color: Colors.white,)))
         ],),
 
     );
