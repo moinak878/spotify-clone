@@ -6,7 +6,9 @@ import 'package:spotify/services/music_operations.dart';
 import 'package:spotify/models/category.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  Function miniplayer;
+  Home(this.miniplayer);
+  // const Home({Key? key}) : super(key: key);
 
   Widget createAppBar(){
     String greeting;
@@ -87,7 +89,7 @@ class Home extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(5),
       margin: EdgeInsets.all(5),
-      height: 110,
+      height: 200,
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.1),
         borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -97,11 +99,16 @@ class Home extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.all(10),
-            height: 110,
-            width: 110,
-            child: Image.network(
-              music.imageURL,
-              fit: BoxFit.cover,
+            height: 150,
+            width: 150,
+            child: InkWell(
+              onTap: ()=>{
+                miniplayer(music)
+              },
+              child: Image.network(
+                music.imageURL,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Text(
@@ -140,7 +147,7 @@ class Home extends StatelessWidget {
         ),
         Container(
         padding: EdgeInsets.all(10),
-        height: 230,
+        height: 250,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
             itemBuilder: (ctx,index){

@@ -8,7 +8,8 @@ class MusicOperations {
           'Toofan',
           'https://c.ndtvimg.com/2021-03/6kl5pk58_farhans-toofan_625x300_10_March_21.jpg',
           'Dekh Toofan Aaya Hai',
-          'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2e/e2/7d/2ee27d35-5e1e-0fd0-42ea-359b5256403e/mzaf_9335390342361255150.plus.aac.p.m4a'),
+          'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2e/e2/7d/2ee27d35-5e1e-0fd0-42ea-359b5256403e/mzaf_9335390342361255150.plus.aac.p.m4a'
+           ),
       Music(
           'Gully Boy',
           'https://c-cl.cdn.smule.com/rs-s95/arr/44/ec/a14c9db3-f454-4a86-80f0-ac9d42f6e87c_256.jpg',
