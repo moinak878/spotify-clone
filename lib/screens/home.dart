@@ -103,7 +103,7 @@ class Home extends StatelessWidget {
             width: 150,
             child: InkWell(
               onTap: ()=>{
-                miniplayer(music,stop:true)
+                miniplayer(music,stop:true,fullscreen:false)
               },
               child: Image.network(
                 music.imageURL,
