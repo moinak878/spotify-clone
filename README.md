@@ -14,9 +14,12 @@ A spotify clone made using Flutter
 ### Tap to pause
 <img width="300" alt="Screenshot 2022-06-24 at 12 48 03 PM" src="https://user-images.githubusercontent.com/32922277/175483836-fcbdaf14-d556-4d34-8899-55970866c55c.png">
 
+## Full screen player
+<img width="300" alt="Screenshot 2022-06-24 at 8 58 42 PM" src="https://user-images.githubusercontent.com/32922277/175569242-85e7c2b4-5ff2-455e-a6e7-768e6bb16f29.png">
+
+
 ## features to be added
 
 * search page 
 * authentication using firebase
-* full screen audio player
 * a backend service to fetch songs from
